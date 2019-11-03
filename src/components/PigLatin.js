@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import '../../node_modules/bootstrap';
 import '../App.css';
 
 class PigLatin extends Component {
   state = {};
   render() {
     return (
-      <div className="main">
+      <div className="main purple">
         <h1>Pig Latin Translator</h1>
         <Link to="/" className="App-link">
           Back

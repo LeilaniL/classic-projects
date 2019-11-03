@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import '../../node_modules/bootstrap';
 import curlyBraces from '../curly-braces-gray.png';
 
 class UserInput extends Component {
@@ -17,10 +18,15 @@ class UserInput extends Component {
           <Link to="/pig-latin" className="App-link">
             Pig Latin Translator
           </Link>
+          <Link to="/roman-num" className="App-link">
+            Roman Numeral Converter
+          </Link>
         </header>
         <form className="main">
           <input type="text" placeholder={this.state.prompt}></input>
-          <button type="submit">Submit</button>
+          <button type="submit" className="btn btn-info">
+            Submit
+          </button>
         </form>
       </div>
     );
