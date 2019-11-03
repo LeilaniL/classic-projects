@@ -1,14 +1,20 @@
 import React from 'react';
-import curlyBraces from './curly-braces-gray.png';
+import { Switch, Route, BrowserRouter, Link } from 'react-router-dom';
 import './App.css';
+import UserInput from './components/UserInput.js';
+import PigLatin from './components/PigLatin.js';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={curlyBraces} className="App-logo" alt="curly-braces" />
-        <p>Pick a project:</p>
-      </header>
+      <BrowserRouter>
+        <div>
+          <Switch>
+            <Route exact path="/" component={UserInput} />
+            <Route path="/pig-latin" component={PigLatin} />
+          </Switch>
+        </div>
+      </BrowserRouter>
     </div>
   );
 }
