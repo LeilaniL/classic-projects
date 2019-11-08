@@ -11,14 +11,15 @@ class UserInput extends Component {
       output: ''
     };
   }
-  submitForm = () => {
-    debugger;
+  submitForm = e => {
+    e.preventDefault();
     if (this.state.chosenGame === 'romanNumerals') {
       alert('roman nums yo');
     } else {
       let result = PigLatinGame.getTranslation(this.state.input);
       this.setState({
-        output: result
+        output: result,
+        input: ''
       });
     }
   };
@@ -30,11 +31,11 @@ class UserInput extends Component {
 
   render() {
     return (
-      <form onSubmit={this.submitForm}>
+      <form onSubmit={e => this.submitForm(e)}>
         <div className="form-group">
           <input
             type="text"
-            defaultValue={this.state.input}
+            value={this.state.input}
             onChange={this.changeHandler}
             placeholder={
               this.state.chosenGame === 'romanNumerals'
