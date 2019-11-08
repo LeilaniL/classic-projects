@@ -1,19 +1,19 @@
 export default class PigLatinGame {
-  vowels = ['a', 'i', 'e', 'o', 'u'];
+  static vowels = ['a', 'i', 'e', 'o', 'u'];
 
-  getTranslation(sentence) {
+  static getTranslation = sentence => {
     let result = [];
     let wordArray = sentence.split(' ');
-    wordArray.forEach(function(input) {
+    wordArray.forEach(input => {
       result.push(this.translateWord(input));
     });
     if (!result.join('')) {
       return 'Nope! Try again Grant!';
     }
     return result.join(' ');
-  }
+  };
 
-  translateWord(word) {
+  static translateWord = word => {
     let characterArr = word.toLowerCase().split('');
     if (this.vowels.includes(characterArr[0])) {
       return characterArr.join('') + 'way';
@@ -34,5 +34,5 @@ export default class PigLatinGame {
         }
       }
     }
-  }
+  };
 }

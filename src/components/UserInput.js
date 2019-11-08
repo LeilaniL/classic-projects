@@ -7,11 +7,20 @@ class UserInput extends Component {
     this.state = {
       chosenGame: this.props.chosenGame,
       prompt: 'Enter a number',
-      input: ''
+      input: '',
+      output: ''
     };
   }
   submitForm = () => {
-    alert(this.state.input + ' is set!');
+    debugger;
+    if (this.state.chosenGame === 'romanNumerals') {
+      alert('roman nums yo');
+    } else {
+      let result = PigLatinGame.getTranslation(this.state.input);
+      this.setState({
+        output: result
+      });
+    }
   };
   changeHandler = e => {
     this.setState({
@@ -21,7 +30,7 @@ class UserInput extends Component {
 
   render() {
     return (
-      <form>
+      <form onSubmit={this.submitForm}>
         <div className="form-group">
           <input
             type="text"
@@ -34,13 +43,10 @@ class UserInput extends Component {
             }
           ></input>
         </div>
-        <button
-          type="submit"
-          className="btn btn-info"
-          onClick={this.submitForm}
-        >
+        <button type="submit" className="btn btn-info">
           Submit
         </button>
+        <h1>{this.state.output}</h1>
       </form>
     );
   }
