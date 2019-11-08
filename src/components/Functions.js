@@ -1,3 +1,5 @@
+import { PassThrough } from 'stream';
+
 class PigLatinGame {
   static vowels = ['a', 'i', 'e', 'o', 'u'];
 
@@ -55,9 +57,16 @@ class RomanNumerals {
     'I'
   ];
 
-  static convertDigit = num => {
+  static convertDigit = input => {
     let result = [];
-    let remainder = 1;
+    let remainder = 0;
+    if (input > 3999) {
+      // form input validates up to 4 digit numbers
+      return 'Roman numerals only go up to 3,999!';
+    }
+    if (input == 0) {
+      return '"Nulla!"';
+    }
     let loopToCompareVals = num => {
       let i = 0;
       while (num < this.values[i]) {
@@ -74,7 +83,7 @@ class RomanNumerals {
         loopToCompareVals(remainder);
       }
     };
-    loopToCompareVals(num);
+    loopToCompareVals(input);
     return result.join('');
   };
 }

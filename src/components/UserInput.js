@@ -26,7 +26,8 @@ class UserInput extends Component {
   };
   changeHandler = e => {
     this.setState({
-      input: e.target.value
+      input: e.target.value,
+      output: ''
     });
   };
 
@@ -35,7 +36,10 @@ class UserInput extends Component {
       <form onSubmit={e => this.submitForm(e)}>
         <div className="form-group">
           <input
+            required
             type="text"
+            pattern={this.state.chosenGame === 'romanNumerals' && '[0-9]{1,4}'}
+            title="Numbers from 1 to 3,999"
             value={this.state.input}
             onChange={this.changeHandler}
             placeholder={
