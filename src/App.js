@@ -1,9 +1,9 @@
 import React from 'react';
 import { Switch, Route, BrowserRouter, Link } from 'react-router-dom';
 import './App.css';
-import UserInput from './components/UserInput.js';
 import PigLatin from './components/PigLatin.js';
 import RomanNum from './components/RomanNum';
+import Home from './components/Home';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <BrowserRouter>
         <div>
           <Switch>
-            <Route exact path="/" component={UserInput} />
+            <Route exact path="/" component={Home} />
             <Route path="/pig-latin" component={PigLatin} />
             <Route path="/roman-num" component={RomanNum} />
           </Switch>
