@@ -6,8 +6,8 @@ import UserInput from './UserInput';
 const RomanNum = props => {
   return (
     <div className="main orange">
-      <UserInput chosenGame="romanNumerals" />
       <h1>Roman Numeral Converter</h1>
+      <UserInput chosenGame="romanNumerals" />
       <Link to="/" className="App-link">
         Back
       </Link>
@@ -16,18 +16,3 @@ const RomanNum = props => {
 };
 
 export default RomanNum;
-// class RomanNum extends Component {
-//   state = {};
-//   render() {
-//     return (
-//       <div className="main orange">
-//         <h1>Roman Numeral Converter</h1>
-//         <Link to="/" className="App-link">
-//           Back
-//         </Link>
-//       </div>
-//     );
-//   }
-// }
-
-// export default RomanNum;

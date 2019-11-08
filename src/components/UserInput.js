@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PigLatinGame from './Functions.js';
+import { PigLatinGame, RomanNumerals } from './Functions.js';
 
 class UserInput extends Component {
   constructor(props) {
@@ -13,15 +13,16 @@ class UserInput extends Component {
   }
   submitForm = e => {
     e.preventDefault();
+    let result;
     if (this.state.chosenGame === 'romanNumerals') {
-      alert('roman nums yo');
+      result = RomanNumerals.convertDigit(this.state.input);
     } else {
-      let result = PigLatinGame.getTranslation(this.state.input);
-      this.setState({
-        output: result,
-        input: ''
-      });
+      result = PigLatinGame.getTranslation(this.state.input);
     }
+    this.setState({
+      output: result,
+      input: ''
+    });
   };
   changeHandler = e => {
     this.setState({
