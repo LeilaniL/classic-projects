@@ -1,5 +1,3 @@
-import { PassThrough } from 'stream';
-
 class PigLatinGame {
   static vowels = ['a', 'i', 'e', 'o', 'u'];
 

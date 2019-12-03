@@ -11,6 +11,15 @@ class UserInput extends Component {
       output: ''
     };
   }
+  fadeStyleShow = {
+    //TODO: fix animation
+    // opacity: 1,
+    // transition: 'opacity 400ms'
+    animation: 'fadein 2s'
+  };
+  fadeStyleHide = {
+    opacity: 0
+  };
   submitForm = e => {
     e.preventDefault();
     let result;
@@ -52,7 +61,7 @@ class UserInput extends Component {
         <button type="submit" className="btn btn-info">
           Submit
         </button>
-        <h1>{this.state.output}</h1>
+        <h1 style={this.fadeStyleShow}>{this.state.output}</h1>
       </form>
     );
   }
